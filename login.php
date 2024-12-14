@@ -46,31 +46,47 @@ mysqli_close($conn);
 
 ?>
 
-<!DOCTYPE html>
-<html>
-<head>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+		<style>
+			body {
+				background-color: powderblue;
+			}
 
-<style>
-body {background-color: powderblue;}
-h1   {color: blue;}
-p    {color: red;}
-</style>
-    
-    <title>Login</title>
-</head>
-<body>
-    <h1>Login Now</h1>
-    <form method="post" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>">
-        <label>Username (must be email):</label>
-        <input type="text" name="username"><br><br>
-        <label>Password:</label>
-        <input type="password" name="password"><br><br>
-        <input type="submit" value="Login"><br><br>
+			h1 {
+				color: blue;
+			}
 
-        <h4>No Account Yet? <a href="registernow.php">Register Now</a></h4>
-
-  
-
-    </form>
-</body>
+			p {
+				color: red;
+			}
+		</style>
+		<title>Login</title>
+	</head>
+	<body>
+        <center>
+		<h1>Login Now</h1>
+            <form method="post" action="
+                            <?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>">
+                <label>Username (must be email):</label>
+                <input type="text" name="username">
+                <br>
+                <br>
+                <label>Password:</label>
+                <input type="password" name="password">
+                <br>
+                <br>
+                <input type="submit" value="Login">
+                <br>
+                <br>
+                <h4>No Account Yet? <a href="registernow.php">Register Now</a>
+                </h4>
+            </form>
+        </center>
+	</body>
 </html>
