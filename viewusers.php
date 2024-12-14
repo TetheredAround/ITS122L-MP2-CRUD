@@ -18,9 +18,30 @@ $result = mysqli_query($conn, "SELECT * FROM users ORDER BY id DESC");
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 		<title>Homepage</title>
+
+        <script>
+            // Function to format and display the current date
+            function displayDate() {
+                const dateElement = document.getElementById('date-display');
+                const now = new Date();
+                const formattedDate = now.toLocaleDateString('en-US', {
+                    weekday: 'long',
+                    year: 'numeric',
+                    month: 'long',
+                    day: 'numeric'
+                });
+                dateElement.textContent = formattedDate;
+            }
+
+            // Call the function when the page loads
+            window.onload = displayDate;
+        </script>
+
 	</head>
 	<form method="POST" action="add.php">
 		<body>
+            <div id="date-display" style="position: absolute; top: 10px; right: 10px; font-size: 14px; font-weight: bold;"></div>
+            
 			<h2>Welcome Administrator</h2>
 			<br />
 			<input type="submit" name="submit" value="Add New User">
