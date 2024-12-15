@@ -25,7 +25,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     // Check if user exists in database
     $query = "SELECT * FROM users WHERE email = '$username' AND password = '$password'";
     $result = mysqli_query($conn, $query);
-    
+
 if (mysqli_num_rows($result) > 0) {
     $row = mysqli_fetch_assoc($result);
     if ($row["is_admin"] == 1) {
@@ -58,7 +58,7 @@ mysqli_close($conn);
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 		<title>Login Page</title>
 	</head>
-	<body>
+	<body class="register">
         <div class="login-container">
 		<h1>Login Now</h1>
             <form method="post" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>">

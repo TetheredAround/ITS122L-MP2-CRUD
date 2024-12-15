@@ -1,7 +1,8 @@
 <?php
+//ADMIN SIDE
 /**
-Crud operation by: Felipe Ante Jr 2023
-**/
+Crud operation by: Felipe Ante Jr 2023 
+*/
 
 // Create database connection using config file
 include_once("config.php");
@@ -15,6 +16,7 @@ $result = mysqli_query($conn, "SELECT * FROM users ORDER BY id DESC");
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+        <link rel="stylesheet" href="styles.css">
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 		<title>Homepage</title>
@@ -39,22 +41,21 @@ $result = mysqli_query($conn, "SELECT * FROM users ORDER BY id DESC");
 
 	</head>
 	<form method="POST" action="add.php">
-		<body>
-            <div id="date-display" style="position: absolute; top: 10px; right: 10px; font-size: 14px; font-weight: bold;"></div>
-            
-			<h2>Welcome Administrator</h2>
-			<br />
-			<input type="submit" name="submit" value="Add New User">
-			<br />
-			<br />
-			<table width='80%' border=1>
+		<body class="viewuser">
+            <div id="date-display" class="date-display"></div>
+            <div class="viewuser-container">
+			<h2>Welcome Administrator!</h2>
+            <div class="table-container">
+			<table class="table table-bordered">
+                <thead>
 				<tr>
-					<th>Firstname</th>
-					<th>Lastname</th>
-					<th>Mobile</th>
-					<th>Email</th>
+					<th>First Name</th>
+					<th>Last Name</th>
+					<th>Mobile Number</th>
+					<th>Email Address</th>
 					<th>Operations</th>
 				</tr> 
+            </thead>
                 <?php  
                 while($user_data = mysqli_fetch_array($result)) {         
                     echo "<tr>";
@@ -62,13 +63,18 @@ $result = mysqli_query($conn, "SELECT * FROM users ORDER BY id DESC");
                     echo "<td>".$user_data['last_name']."</td>";
                     echo "<td>".$user_data['mobile']."</td>";
                     echo "<td>".$user_data['email']."</td>";    
-                    echo "<td><a href='edit.php?id=$user_data[id]'>Edit</a> | 
-                            <a href='delete.php?id=$user_data[id]'>Delete</a>
+                    echo "<td><a href='edit.php?id=$user_data[id]' class='btn btn-warning btn-xs'>Edit</a> | 
+                            <a href='delete.php?id=$user_data[id]' class='btn btn-danger btn-xs'>Delete</a>
                             </td>
                             </tr>";        
                 }
                 ?>
 			</table>
-			<a href="logout.php">Log out </a>
+            </div>
+            <div class="button-container">
+            <input type="submit" name="submit" value="Add New User" class="add-user-btn">
+			<a href="logout.php" class="logout-btn">Log out </a>
+            </div>
+        </div>
 		</body>
 </html>

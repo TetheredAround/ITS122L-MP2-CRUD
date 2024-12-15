@@ -36,7 +36,7 @@ mysqli_close($conn);
 	<link rel="stylesheet" href="styles.css">
     <title> Registration Form </title>
 </head>
-<body>
+<body class="register">
     <div class="register-container">
         <h1>Register Now</h1>
         <form method="post" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>">
