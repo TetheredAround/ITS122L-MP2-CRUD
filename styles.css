@@ -30,6 +30,10 @@ body {
     width: 450px;
 }
 
+.register-container {
+    width: 700px;
+}
+
 .login-container h1, .register-container h1 {
     margin-bottom: 25px;
     font-size: 28px;
@@ -39,7 +43,7 @@ body {
 .login-container input, .register-container input {
     width: 100%;
     padding: 12px;
-    margin: 12px 0;
+    margin: 5px 0;
     border: none;
     border-radius: 8px;
     font-size: 16px;
@@ -59,6 +63,11 @@ body {
     font-weight: 600;
     cursor: pointer;
     transition: all 0.3s ease;
+    margin-top: 20px;
+}
+
+.register-container button {
+    grid-column: span 2;
 }
 
 .login-container button:hover, .register-container button:hover {
@@ -91,4 +100,40 @@ body {
     margin-bottom: 20px;
     text-align: center;
     transition: all 0.3s ease;
+}
+
+.error-message .register-container {
+    grid-column: span 2; 
+}
+
+.form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr; 
+    gap: 5px; 
+}
+
+.form-grid input {
+    width: 300px; 
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    background: #f9f9f9;
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
+    color: #333;
+}
+
+.register-container a {
+    display: block;
+    margin-top: 15px;
+    text-align: center;
+    font-size: 14px;
+    color: #6a11cb;
+    text-decoration: none;
+    grid-column: span 2; 
+    transition: color 0.3s ease;
+}
+
+.register-container a:hover {
+    color: #2575fc;
 }
