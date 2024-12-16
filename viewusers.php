@@ -20,24 +20,7 @@ $result = mysqli_query($conn, "SELECT * FROM users ORDER BY id DESC");
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 		<title>Homepage</title>
-
-        <script>
-            // Function to format and display the current date
-            function displayDate() {
-                const dateElement = document.getElementById('date-display');
-                const now = new Date();
-                const formattedDate = now.toLocaleDateString('en-US', {
-                    weekday: 'long',
-                    year: 'numeric',
-                    month: 'long',
-                    day: 'numeric'
-                });
-                dateElement.textContent = formattedDate;
-            }
-
-            // Call the function when the page loads
-            window.onload = displayDate;
-        </script>
+        <script src="script.js"></script>
 
 	</head>
 	<form method="POST" action="add.php">
@@ -81,9 +64,4 @@ $result = mysqli_query($conn, "SELECT * FROM users ORDER BY id DESC");
             </div>
         </div>
 		</body>
-        <script>
-            function confirmDeleteUser() {
-                return confirm("Are you sure you want to delete this user?");
-            }
-        </script>
 </html>
