@@ -68,7 +68,7 @@ $result = mysqli_query($conn, "SELECT * FROM users ORDER BY id DESC");
                     echo "<td>".$user_data['email']."</td>";
                     echo "<td>".$user_data['emp_desc']."</td>";        
                     echo "<td><a href='edit.php?id=$user_data[id]' class='btn btn-warning btn-xs'>Edit</a> | 
-                            <a href='delete.php?id=$user_data[id]' class='btn btn-danger btn-xs'>Delete</a>
+                            <a href='delete.php?id=$user_data[id]' class='btn btn-danger btn-xs' onclick='return confirmDeleteUser();'>Delete</a>
                             </td>
                             </tr>";        
                 }
@@ -81,4 +81,9 @@ $result = mysqli_query($conn, "SELECT * FROM users ORDER BY id DESC");
             </div>
         </div>
 		</body>
+        <script>
+            function confirmDeleteUser() {
+                return confirm("Are you sure you want to delete this user?");
+            }
+        </script>
 </html>
