@@ -13,7 +13,7 @@ if (isset($_POST["submit"])) {
     $phone = $_POST["phone"]; 
 
     // Insert the user into the database
-    $sql = "INSERT INTO users (username, first_name, last_name, password, email, phone) VALUES ('$username', '$firstname','$lastname','$password', '$email', '$phone')";
+    $sql = "INSERT INTO users (username, first_name, last_name, password, email, mobile) VALUES ('$username', '$firstname','$lastname','$password', '$email', '$phone')";
     if (mysqli_query($conn, $sql)) {
         echo "<b>Registration successful!<b>";
         header('Refresh: 1; URL = login.php');

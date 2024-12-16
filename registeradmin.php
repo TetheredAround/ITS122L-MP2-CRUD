@@ -15,7 +15,7 @@ if (isset($_POST["submit"])) {
 	$is_admin = 1;
 
     // Insert the user into the database
-    $sql = "INSERT INTO users (username, is_admin, first_name, last_name, password, email, phone) VALUES ('$username', '$is_admin', '$firstname','$lastname','$password', '$email', '$phone')";
+    $sql = "INSERT INTO users (username, is_admin, first_name, last_name, password, email, mobile) VALUES ('$username', '$is_admin', '$firstname','$lastname','$password', '$email', '$phone')";
     if (mysqli_query($conn, $sql)) {
         echo "<b>Registration successful!<b>";
         header('Refresh: 1; URL = login.php');
