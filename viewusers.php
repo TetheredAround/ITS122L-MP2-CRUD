@@ -52,7 +52,9 @@ $result = mysqli_query($conn, "SELECT * FROM users ORDER BY id DESC");
 					<th>First Name</th>
 					<th>Last Name</th>
 					<th>Mobile Number</th>
+                    <th>Username</th>
 					<th>Email Address</th>
+                    <th>Description</th>
 					<th>Operations</th>
 				</tr> 
             </thead>
@@ -62,7 +64,9 @@ $result = mysqli_query($conn, "SELECT * FROM users ORDER BY id DESC");
                     echo "<td>".$user_data['first_name']."</td>";
                     echo "<td>".$user_data['last_name']."</td>";
                     echo "<td>".$user_data['mobile']."</td>";
-                    echo "<td>".$user_data['email']."</td>";    
+                    echo "<td>".$user_data['username']."</td>";
+                    echo "<td>".$user_data['email']."</td>";
+                    echo "<td>".$user_data['emp_desc']."</td>";        
                     echo "<td><a href='edit.php?id=$user_data[id]' class='btn btn-warning btn-xs'>Edit</a> | 
                             <a href='delete.php?id=$user_data[id]' class='btn btn-danger btn-xs'>Delete</a>
                             </td>

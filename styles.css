@@ -32,7 +32,7 @@ body.viewuser{
     gap: 30px; 
 }
 
-.login-container, .register-container {
+.login-container, .register-container, .edit-container {
     background: linear-gradient(135deg, #6a11cb, #2575fc);
     border-radius: 16px;
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
@@ -44,6 +44,10 @@ body.viewuser{
 
 .register-container {
     width: 700px;
+}
+
+.edit-container {
+    width: 800px;
 }
 
 .login-container h1, .register-container h1 {
@@ -114,17 +118,17 @@ body.viewuser{
     transition: all 0.3s ease;
 }
 
-.error-message .register-container {
+.error-message .register-container .edit-container {
     grid-column: span 2; 
 }
 
-.form-grid {
+.form-grid, .edit-form-grid{
     display: grid;
     grid-template-columns: 1fr 1fr; 
     gap: 5px; 
 }
 
-.form-grid input {
+.form-grid, .edit-form-grid input {
     width: 300px; 
     padding: 12px;
     border: none;
@@ -133,6 +137,10 @@ body.viewuser{
     background: #f9f9f9;
     box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
     color: #333;
+}
+
+.edit-form-grid input {
+    width: 350px;
 }
 
 .register-container a {
