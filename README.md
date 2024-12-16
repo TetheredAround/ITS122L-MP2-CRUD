@@ -1,3 +1,8 @@
+Machine Problem 2
+
+submitted by: Roland Oscar Y. Castaneda & Gene Kyle Michael S. Flores
+submitted: Felipe G. Ante Jr.
+
 This application focus on Database Connectivity and CRUD which is Create Read Update Delete of the items in this
 database application. Modify this application by adding some features like bootstrap, css and javascripts to make
 the application more presentable but be sure to test the program and the database is running smoothly first
