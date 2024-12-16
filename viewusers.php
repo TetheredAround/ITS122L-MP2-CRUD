@@ -27,7 +27,7 @@ $result = mysqli_query($conn, "SELECT * FROM users ORDER BY id DESC");
 		<body class="viewuser">
             <div id="date-display" class="date-display"></div>
             <div class="viewuser-container">
-			<h2>Welcome Administrator!</h2>
+			<h2>Welcome, Administrator!</h2>
             <div class="table-container">
 			<table class="table table-bordered">
                 <thead>
@@ -59,8 +59,8 @@ $result = mysqli_query($conn, "SELECT * FROM users ORDER BY id DESC");
 			</table>
             </div>
             <div class="button-container">
+            <a href="logout.php" class="logout-btn">Log out </a>
             <input type="submit" name="submit" value="Add New User" class="add-user-btn">
-			<a href="logout.php" class="logout-btn">Log out </a>
             </div>
         </div>
 		</body>

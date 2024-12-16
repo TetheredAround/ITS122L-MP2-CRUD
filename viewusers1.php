@@ -44,7 +44,7 @@ $result = mysqli_query($conn, "SELECT * FROM users ORDER BY id DESC");
 		<body class="viewuser">
             <div id="date-display" class="date-display"></div>
             <div class="viewuser-container">
-			<h2>Welcome Employee!</h2>
+			<h2>Welcome, Employee!</h2>
             <div class="table-container">
 			<table class="table table-bordered">
                 <thead>

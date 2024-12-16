@@ -60,7 +60,8 @@ mysqli_close($conn);
 	</head>
 	<body class="register">
         <div class="login-container">
-		<h1>Login Now</h1>
+		<h1>Welcome Guest!</h1>
+        <h1>Login Now</h1>
             <form method="post" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>">
                 <input type="text" name="username" placeholder="E-mail/Username" required>
                 <input type="password" name="password" placeholder="Password" required>

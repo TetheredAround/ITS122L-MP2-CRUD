@@ -55,6 +55,7 @@ while($user_data = mysqli_fetch_array($result))
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 	<link rel="stylesheet" href="styles.css">
     <title> Registration Form </title>
+	<script src="script.js"></script>
 </head>
 <body class="register">
     <div class="edit-container">
@@ -76,7 +77,7 @@ while($user_data = mysqli_fetch_array($result))
             </div>
 			<div class="button-container">
 				<a href="viewusers.php" class="logout-btn">Cancel </a>
-				<input type="submit" name="update" value="Update" class="add-user-btn">
+				<input type="submit" name="update" value="Update" class="add-user-btn" onclick="return confirmEditUser();">
 			</div>
 
             <?php

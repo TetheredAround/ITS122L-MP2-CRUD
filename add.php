@@ -23,8 +23,8 @@ if(isset($_POST['add'])) {
 	// Insert user data into table
 	$result = mysqli_query($conn, "INSERT INTO users(username,first_name,last_name,is_admin,email,password,mobile,emp_desc) VALUES('$uname','$first_name','$last_name','$is_admin','$email','$password','$mobile','$desc')");
 	
-	// Show message when user added
-	echo "User added successfully. <a href='viewusers.php'>View Users</a>";
+	header('Refresh: 1; URL = viewusers.php');
+
 }
 ?>
 
@@ -37,6 +37,7 @@ if(isset($_POST['add'])) {
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 	<link rel="stylesheet" href="styles.css">
     <title> Add User </title>
+	<script src="script.js"></script>
 </head>
 <body class="register">
     <div class="edit-container">
@@ -55,8 +56,8 @@ if(isset($_POST['add'])) {
 				<input type="checkbox" id="admin-priv" name="admin-priv" value="true">
             </div>
 			<div class="button-container">
-				<a href="viewusers.php" class="logout-btn">Cancel </a>
-				<input type="submit" name="add" value="add" class="add-user-btn">
+				<a href="viewusers.php" class="logout-btn">Cancel</a>
+				<input type="submit" name="add" value="Add" class="add-user-btn" onclick="return confirmAddUser();">
 			</div>
 
             <?php
@@ -68,58 +69,3 @@ if(isset($_POST['add'])) {
     </div>
 </body>
 </html>
-
-
-<!--
-<html>
-<head>
-	
-	<meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-
-	<title>Add Users</title>
-</head>
-
-<body>
-	<a href="index.php">Home</a>
-	<br/><br/>
-
-	<form action="add.php" method="post" name="form1">
-		<table width="25%" border="0">
-			<tr> 
-				<td>FirstName</td>
-				<td><input type="text" name="first_name"></td></tr>
-
-				<tr>	
-					<td>LastName</td>
-				<td><input type="text" name="last_name"></td>
-			</tr>
-
-			<tr> 
-				<td>Email</td>
-				<td><input type="text" name="email"></td>
-			</tr>
-
-			<tr> 
-				<td>Mobile</td>
-				<td><input type="text" name="mobile"></td>
-			</tr>
-
-			<tr> 
-				<td>Description</td>
-				<td><input type="text" name="description"></td>
-			</tr>
-
-			<tr> 
-				<td></td>
-				<td><input type="submit" name="Submit" value="Add"></td>
-			</tr>
-
-		</table>
-	</form>
-</body>
-</html>
--->
