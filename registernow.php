@@ -38,7 +38,7 @@ mysqli_close($conn);
 </head>
 <body class="register">
     <div class="register-container">
-        <h1>Register Now</h1>
+        <h1>User Registration</h1>
         <form method="post" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>">
             <div class="form-grid">
                 <input type="text" name="username" placeholder="Username" required>
@@ -57,7 +57,7 @@ mysqli_close($conn);
             } 
             ?>
 
-            <a href="login.php">Already have an account? Log-in!</a>
+            <a href="login.php"> Already have an account? Log-in!</a>
         </form>
     </div>
 </body>

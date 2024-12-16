@@ -12,9 +12,15 @@ if(isset($_POST['update']))
 	$mobile=$_POST['phone'];
 	$email=$_POST['email'];
 	$desc = $_POST['emp_desc'];
+
+	$is_admin = 0;
+
+	if (isset($_POST['admin-priv'])) {
+		$is_admin = ($_POST['admin-priv'] === 'true') ? 1 : 0;
+	}
 		
 	// update user data
-	$result = mysqli_query($conn, "UPDATE users SET first_name='$first_name',last_name='$last_name', email='$email',mobile='$mobile', username='$username', emp_desc='$desc' WHERE id=$id");
+	$result = mysqli_query($conn, "UPDATE users SET first_name='$first_name',is_admin='$is_admin',last_name='$last_name', email='$email',mobile='$mobile', username='$username', emp_desc='$desc' WHERE id=$id");
 	
 	// Redirect to homepage to display updated user in list
 	header("Location: viewusers.php");
@@ -36,6 +42,7 @@ while($user_data = mysqli_fetch_array($result))
 	$mobile = $user_data['mobile'];
 	$username = $user_data['username'];
 	$desc = $user_data['emp_desc'];
+	$is_admin = $user_data['is_admin'];
 }
 ?>
 
@@ -61,6 +68,10 @@ while($user_data = mysqli_fetch_array($result))
                 <input type="text" name="lastname" placeholder="Last Name" value="<?php echo $last_name?>" required>
                 <input type="email" name="email" placeholder="E-mail Address" value="<?php echo $email?>" required>
 				<input type="text" name="emp_desc" placeholder="Description" value="<?php echo $desc?>" required>
+
+				<label for="admin-priv">Admin Privileges:</label>
+				<input type="checkbox" id="admin-priv" name="admin-priv" value="true" <?php echo ($is_admin == 1) ? 'checked' : ''; ?>>
+
 				<input type="hidden" name="id" value=<?php echo $_GET['id'];?>>
             </div>
 			<div class="button-container">
