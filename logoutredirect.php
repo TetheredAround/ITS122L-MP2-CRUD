@@ -3,7 +3,7 @@
    unset($_SESSION["username"]);
    unset($_SESSION["password"]);
    
-   header('Refresh: 1; URL = logoutredirect.php');
+   header('Refresh: 1; URL = login.php');
 ?>
 
 <!DOCTYPE html>
@@ -17,10 +17,8 @@
 </head>
 <body class="register">
 <div class="login-container">
-		<h1>Logging out...</h1>
-      <div class="progress-bar">
-         <span></span>
-      </div>
+		<h1>Logged Out</h1>
+        <h4>You have successfully logged out!</h4>
 </div>
 </body>
 </html>
